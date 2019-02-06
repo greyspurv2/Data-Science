@@ -1,0 +1,35 @@
+# At any given time when a Python process is run, a maximum of 16 % of CPU is being used.
+#That is fine for it's use case as you might wish to have other processes running. However what if you have a computer
+#dedicated to only doing computations on that one task? Then you wish to reach a 100% CPU usage.
+#That is where multiprocessing come in.
+#When processes are firing off they do not do it at a perfect syncronous step, and if the sequence of such steps are crucial
+#then that is where lock comes in as it forces the processes to step in lock and reales after the process.
+
+#lock can be pip installed
+
+import multiprocessing as mp
+import lock
+import time
+import os
+
+
+def spawn():
+    print('spawned!')
+
+#for i in range(500) can be expanded or shrunk to reach max core capacity
+
+if __name__ == '__main__':
+    for i in range(500):
+        p = mp.Process(target=spawn)
+        p.start()
+        p.join()
+
+#here we tell the script to set and release the lock after the process, the range and value could be anything else
+
+def sub_100_lock_init__(total, lock):
+    for i in range(100):
+        time.sleep(0.01)
+        lock.aquire()
+        total.value -= 5
+        lock.realse()
+ 
