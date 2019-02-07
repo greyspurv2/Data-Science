@@ -5,10 +5,9 @@
 #When processes are firing off they do not do it at a perfect syncronous step, and if the sequence of such steps are crucial
 #then that is where lock comes in as it forces the processes to step in lock and reales after the process.
 
-#lock can be pip installed
+
 
 import multiprocessing as mp
-import lock
 import time
 import os
 
@@ -25,6 +24,7 @@ if __name__ == '__main__':
         p.join()
 
 #here we tell the script to set and release the lock after the process, the range and value could be anything else
+#locks can be bottlenecks but there can be usecases of when to use them as such the order if of importance like banking systems.
 
 def sub_100_lock_init__(total, lock):
     for i in range(100):
