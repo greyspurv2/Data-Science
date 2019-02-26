@@ -1,0 +1,20 @@
+import keras
+from keras import sequential
+
+#models should be fittet with more or less models dimensions according to
+#end results accuracy as to not over or underfit
+
+
+#LeakyReLU is a general good activation function as it is stepped and detracts from 'saddlepoints'/'deadneurons'
+model = sequential()
+model.add(Dense(units=64, activation='LeakyReLU', input_dim=1000))
+model.add(Dense(units=10, activation='softmax'))
+
+#batch sizes helps faster training as it can be fit to memory and therefore optimize time spent training a model
+
+(batch_size, 64)
+
+keras.layers.BatchNormalization(axis=-1, momentum=0.99, epsilon=0.001, center=True, scale=True, beta_initializer='zeros', gamma_initializer='ones', moving_mean_initializer='zeros', moving_variance_initializer='ones', beta_regularizer=None, gamma_regularizer=None, beta_constraint=None, gamma_constraint=None)
+keras.layers.SimpleRNN(units, activation='tanh', use_bias=True, kernel_initializer='glorot_uniform', recurrent_initializer='orthogonal', bias_initializer='zeros', kernel_regularizer=None, recurrent_regularizer=None, bias_regularizer=None, activity_regularizer=None, kernel_constraint=None, recurrent_constraint=None, bias_constraint=None, dropout=0.0, recurrent_dropout=0.0, return_sequences=False, return_state=False, go_backwards=False, stateful=False, unroll=False)
+
+print()
